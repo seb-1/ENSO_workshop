@@ -7,13 +7,17 @@ Examples include simple steps like loading large ensemble output, doing simple c
 
 
 ## custom environment
+(optional, more flexibility)
 
 To use a custom conda environment on CISL systems that allows installing your own packages, such as python cdo bindings, do the following:
 
 Download the conda installer into your home directory:
+`wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh`
+
+and run `bash  Miniconda3-latest-Linux-x86_64.sh`
 
 Create a new environment:
-'conda create --name jlab_37 python=3.7 jupyterlab matplotlib cartopy cdo netcdf4 numpy pandas python-cdo scipy seaborn tqdm xarray ipykernel'
+`conda create --name jlab_37 python=3.7 jupyterlab matplotlib cartopy cdo netcdf4 numpy pandas python-cdo scipy seaborn tqdm xarray ipykernel`
 
 Note that python >3.7 can cause problems with jupyterhub at CISL. ipykernel is required so that jupyterhub can use the environment.
 
