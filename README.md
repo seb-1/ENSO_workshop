@@ -4,3 +4,29 @@ Scripts for the ENSO/SMILE workshop August 2021
 Use https://jupyterhub.hpc.ucar.edu to run the notebooks and select the Pangeo Kernel.
 
 Examples include simple steps like loading large ensemble output, doing simple calculations, and plotting.
+
+
+## custom environment
+
+To use a custom conda environment on CISL systems that allows installing your own packages, such as python cdo bindings, do the following:
+
+Download the conda installer into your home directory:
+
+Create a new environment:
+'conda create --name jlab_37 python=3.7 jupyterlab matplotlib cartopy cdo netcdf4 numpy pandas python-cdo scipy seaborn tqdm xarray ipykernel'
+
+Note that python >3.7 can cause problems with jupyterhub at CISL. ipykernel is required so that jupyterhub can use the environment.
+
+Consider moving the environments (which can be ~4GB) to a different location. This can be done by creating the file ~/.condarc with the following content:
+
+```
+envs_dirs:
+  - /glade/work/USER/conda/conda-envs
+pkgs_dirs:
+  - /glade/scratch/USER/conda/conda-pkgs
+changeps1: false
+auto_activate_base: false
+channels:
+  - conda-forge
+  - defaults
+```
