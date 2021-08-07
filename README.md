@@ -17,7 +17,7 @@ Download the conda installer into your home directory:
 and run `bash  Miniconda3-latest-Linux-x86_64.sh`
 
 Create a new environment:
-`conda create --name jlab_37 python=3.7 jupyterlab matplotlib cartopy cdo netcdf4 numpy pandas python-cdo scipy seaborn tqdm xarray ipykernel`
+`conda create --name jlab_37 python=3.7 jupyterlab matplotlib cartopy cdo netcdf4 numpy pandas python-cdo scipy seaborn tqdm xarray ipykernel dask`
 
 Note that python >3.7 can cause problems with jupyterhub at CISL. ipykernel is required so that jupyterhub can use the environment.
 
