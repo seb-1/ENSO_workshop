@@ -5,7 +5,7 @@
 module load cdo
 
 basedir_MMLEA=/glade/collections/cdg/data/CLIVAR_LE
-basedir_out=/glade/scratch/$USER
+basedir_out=/glade/scratch/$USER/SMILEs
 
 ##################
 # CESM-LENS
@@ -102,5 +102,28 @@ for rrr in $(seq $run_0 $run_n); do
     datdir=${idir}
     ifiles=${datdir}/${varstring}*${experiment}*${expid}*.nc
     ofile=${outdir}/${varstring}_${model}_${expid}_globalmean.nc
+    cdo fldmean ${ifiles} ${ofile}
+done
+
+## historical members starting in 1850 (needed for reference period)
+idir=/glade/scratch/milinski/SMILEs/CanESM2/historical_1850
+
+run_0=1
+run_n=5
+model=canesm2
+experiment=historical
+varstring=tas
+suffix=i1p1
+outdir=${basedir_out}/CanESM2/global_mean
+mkdir -p $outdir
+
+for rrr in $(seq $run_0 $run_n); do
+
+    expid=r$(printf "%01d" $rrr)${suffix}
+    echo ${expid}
+    datdir=${idir}
+    ifiles=${datdir}/${varstring}*${experiment}*${expid}*.nc
+    ofile=${outdir}/${varstring}_${model}_${expid}_historical_1850-2005_globalmean.nc
+    echo $ofile
     cdo fldmean ${ifiles} ${ofile}
 done
