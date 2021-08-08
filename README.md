@@ -5,6 +5,12 @@ Use https://jupyterhub.hpc.ucar.edu to run the notebooks and select the Pangeo K
 
 Examples include simple steps like loading large ensemble output, doing simple calculations, and plotting.
 
+## data on Cheyenne
+
+MMLEA: `/glade/collections/cdg/data/CLIVAR_LE`
+CMIP6 SMILEs: `/glade/scratch/rwills/cmip6_ensembles`
+
+Prerocessed GSAT and Nino3.4 SST for some models: `/glade/scratch/milinski/SMILEs`
 
 ## custom environment
 (optional, more flexibility)
