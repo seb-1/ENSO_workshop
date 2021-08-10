@@ -61,7 +61,7 @@ basedir_out=/glade/scratch/$USER/SMILEs
 
 idir=$basedir_MMLEA/mpi_lens/Amon/ts/
 
-run_0=84
+run_0=1
 run_n=100
 model=mpi-ge
 varstring=ts
