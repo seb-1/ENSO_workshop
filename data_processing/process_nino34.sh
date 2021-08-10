@@ -150,3 +150,5 @@ for i in $(seq $run_0 $run_n); do
     ofile=${outdir}/sst_mon_${model}_${experiment}_${expid}_nino34.nc
     cdo fldmean -sellonlatbox,-170,-120,-5,5 -mergetime ${ifiles} ${ofile}
 done
+
+
