@@ -8,7 +8,9 @@ Examples include simple steps like loading large ensemble output, doing simple c
 ## data on Cheyenne
 
 MMLEA: `/glade/collections/cdg/data/CLIVAR_LE`
+
 CMIP6 SMILEs: `/glade/scratch/rwills/cmip6_ensembles`
+
 
 Prerocessed GSAT and Nino3.4 SST for some models: `/glade/scratch/milinski/SMILEs`
 
