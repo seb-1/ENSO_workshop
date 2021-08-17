@@ -259,19 +259,130 @@ basedir_out=/glade/scratch/milinski/ESGF_downloads/NINO34
 # ofile=${outdir}/tos_mon_${model}_${experiment}_${expid_out}_g025_nino34.nc
 # cdo fldmean -sellonlatbox,-170,-120,-5,5 ${ifiles} ${ofile}
 
-##################
-# ACCESS-ESM1-5
-#
-# tos_mon_ACCESS-ESM1-5_historical_r10i1p1f1_g025.nc
+# ##################
+# # ACCESS-ESM1-5
+# #
+# # tos_mon_ACCESS-ESM1-5_historical_r10i1p1f1_g025.nc
 
-idir=$basedir_MMLEA/access_lens/Omon/tos
+# idir=$basedir_MMLEA/access_lens/Omon/tos
+
+# run_0=1
+# run_n=30
+# model=ACCESS-ESM1-5
+# experiment=historical
+# varstring=tos
+# suffix=i1p1f1
+
+
+# experiment=historical
+# outdir=${basedir_out}/${model}/${experiment}
+# mkdir -p $outdir
+# for rrr in $(seq $run_0 $run_n); do
+
+#     expid=r$(printf "%01d" $rrr)${suffix}
+#     echo ${expid}
+
+#     datdir=${idir}
+#     ifiles=${datdir}/tos_mon_${model}_${experiment}_${expid}_g025.nc
+#     ofile=${outdir}/tos_mon_${model}_${experiment}_${expid}_g025_nino34.nc
+#     cdo fldmean -sellonlatbox,-170,-120,-5,5 ${ifiles} ${ofile}
+
+# done
+
+# run_0=1
+# run_n=10
+# experiment=ssp370
+# outdir=${basedir_out}/${model}/${experiment}
+# mkdir -p $outdir
+# for rrr in $(seq $run_0 $run_n); do
+
+#     expid=r$(printf "%01d" $rrr)${suffix}
+#     echo ${expid}
+#     datdir=${idir}
+#     ifiles=${datdir}/tos_mon_${model}_${experiment}_${expid}_g025.nc
+#     ofile=${outdir}/tos_mon_${model}_${experiment}_${expid}_g025_nino34.nc
+#     cdo fldmean -sellonlatbox,-170,-120,-5,5 ${ifiles} ${ofile}
+
+# done
+
+# run_0=1
+# run_n=10
+# experiment=ssp585
+# outdir=${basedir_out}/${model}/${experiment}
+# mkdir -p $outdir
+# for rrr in $(seq $run_0 $run_n); do
+
+#     expid=r$(printf "%01d" $rrr)${suffix}
+#     echo ${expid}
+#     datdir=${idir}
+#     ifiles=${datdir}/tos_mon_${model}_${experiment}_${expid}_g025.nc
+#     ofile=${outdir}/tos_mon_${model}_${experiment}_${expid}_g025_nino34.nc
+#     cdo fldmean -sellonlatbox,-170,-120,-5,5 ${ifiles} ${ofile}
+
+# done
+
+
+
+# ##################
+# # EC-Earth3
+# #
+# # tos_mon_EC-Earth3_historical_r10i1p1f1_g025.nc
+
+# idir=$basedir_MMLEA/ec-earth3_lens/Omon/tos
+
+# run_0=101
+# run_n=150
+# model=EC-Earth3
+# experiment=historical
+# varstring=tos
+# suffix=i1p1f1
+
+
+# experiment=historical
+# outdir=${basedir_out}/${model}/${experiment}
+# mkdir -p $outdir
+# for rrr in $(seq $run_0 $run_n); do
+
+#     expid=r$(printf "%01d" $rrr)${suffix}
+#     echo ${expid}
+
+#     datdir=${idir}
+#     ifiles=${datdir}/tos_mon_${model}_${experiment}_${expid}_g025.nc
+#     ofile=${outdir}/tos_mon_${model}_${experiment}_${expid}_g025_nino34.nc
+#     cdo fldmean -sellonlatbox,-170,-120,-5,5 ${ifiles} ${ofile}
+
+# done
+
+# run_0=101
+# run_n=150
+# experiment=ssp585
+# outdir=${basedir_out}/${model}/${experiment}
+# mkdir -p $outdir
+# for rrr in $(seq $run_0 $run_n); do
+
+#     expid=r$(printf "%01d" $rrr)${suffix}
+#     echo ${expid}
+#     datdir=${idir}
+#     ifiles=${datdir}/tos_mon_${model}_${experiment}_${expid}_g025.nc
+#     ofile=${outdir}/tos_mon_${model}_${experiment}_${expid}_g025_nino34.nc
+#     cdo fldmean -sellonlatbox,-170,-120,-5,5 ${ifiles} ${ofile}
+
+# done
+
+
+
+##################
+# MIROC-ES2L
+#
+
+idir=$basedir_MMLEA/miroc_esm2l_lens/Omon/tos
 
 run_0=1
 run_n=30
-model=ACCESS-ESM1-5
+model=MIROC-ES2L
 experiment=historical
 varstring=tos
-suffix=i1p1f1
+suffix=i1p1f2
 
 
 experiment=historical
@@ -320,4 +431,3 @@ for rrr in $(seq $run_0 $run_n); do
     cdo fldmean -sellonlatbox,-170,-120,-5,5 ${ifiles} ${ofile}
 
 done
-
