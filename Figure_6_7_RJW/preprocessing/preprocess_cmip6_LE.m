@@ -25,7 +25,11 @@ end
 LON_AXIS = (1.25:2.5:358.75)';
 LAT_AXIS = (-88.75:2.5:88.75)';
 
-dir = ['/glade/work/sasanch/ENSOworkshop/',model_name,'_lens/'];
+if strcmp(model_name,'access')
+    dir = '/glade/campaign/cgd/cas/nmaher/access_lens/';
+else
+    dir = ['/glade/work/sasanch/ENSOworkshop/',model_name,'_lens/'];
+end
 
 save_dir = '/glade/work/rwills/projects_output/ENSO_workshop/';
 

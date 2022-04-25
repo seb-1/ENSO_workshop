@@ -3,7 +3,7 @@ addpath(genpath('/glade/u/home/rwills/Climate_analysis/projects/ENSO_workshop'))
 models = {'access','canesm5','ipsl_cm6a','miroc6','miroc_esm2l','ec-earth3','ec-earth3','ec-earth3','cesm2'};
 ssp_name = {'ssp370','ssp370','ssp370','ssp585','ssp585','ssp585','none','ssp585','ssp370'};
 
-members{1} = 1:10;
+members{1} = 1:40; %1:10
 members{2} = 1:25;
 members{3} = [1:10,14];
 members{4} = 1:50;
@@ -20,7 +20,7 @@ year1 = [1850 1850 1850 1850 1850 1850 1850 1970 1850];
 year2 = [2100 2099 2100 2100 2100 2100 2014 2100 2100];
 var = {'tos','tos','tos','tos','tos','tos','tos','tos','tos'};
 
-for i = 1:length(models)
+for i = 1%:length(models)
     if strcmp(ssp_name{i},'none')
         preprocess_cmip6_LE_no_ssp(models{i},members{i},year1(i),year2(i),'monthly',var{i});
     else
