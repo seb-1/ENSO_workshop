@@ -4,7 +4,7 @@ models = {'access','canesm2','canesm5','cesm1','cesm2','csiro_mk36','ec-earth3',
 [sst_east_out,sst_west_out] = hook_plots(models(1:14),1:12);
 close all
 gradient_clim(:,:,1) = nanmean(sst_east_out(:,1951-1850+1:1980-1850+1,:),2)-nanmean(sst_west_out(:,1951-1850+1:1980-1850+1,:),2);
-gradient_clim(:,:,2) = nanmean(sst_east_out(:,2071-1850+1:2100-1850+1,:),2)-nanmean(sst_west_out(:,2071-1850+1:2100-1850+1,:),2);
+gradient_clim(:,:,2) = nanmean(sst_east_out(:,2070-1850+1:2099-1850+1,:),2)-nanmean(sst_west_out(:,2070-1850+1:2099-1850+1,:),2);
 load('ERSST5_indices_1900_2019.mat')
 ersst5_gradient = reshape(ersst5_east-ersst5_west,[12 120]);
 ersst5_gradient_clim = mean(ersst5_gradient(:,52:81),2);
@@ -15,8 +15,8 @@ s2n = 0; % setting this to zero uses simple ensemble average instead of S2N patt
 varnam = {'tos','tos','tos','ts-sst','tos','tos','tos','ts-sst','tos','tos','tos','tos','tos','tos'};
 year1 = [1850 1950 1850 1920 1850 1850 1850 1920 1861 1921 1850 1850 1850 1850];
 year2 = [2100 2100 2100 2100 2100 2100 2100 2100 2100 2100 2100 2100 2100 2099];
-ne = [10 50 25 40 99 30 73 20 30 30 11 50 10 100];
-titles = {'ACCESS-ESM1-5 (10, SSP370)','CanESM2 (50, RCP85)','CanESM5 (25, SSP370)','CESM1-LE (40, RCP85)','CESM2-LE (99, SSP370)', ...
+ne = [40 50 25 40 99 30 73 20 30 30 11 50 10 100];
+titles = {'ACCESS-ESM1-5 (40, SSP370)','CanESM2 (50, RCP85)','CanESM5 (25, SSP370)','CESM1-LE (40, RCP85)','CESM2-LE (99, SSP370)', ...
     'CSIRO-Mk36 (30, RCP85)','EC-EARTH3 (73, SSP585)','GFDL-CM3 (20, RCP85)','GFDL-ESM2M (30, RCP85)','GFDL-SPEAR-MED (30, RCP85)', ...
     'IPSL-CM6A-LR (11, SSP370)','MIROC6 (50, SSP585)','MIROC-ES2L (10, SSP585)','MPI-GE (100, RCP85)'};
 
@@ -87,5 +87,5 @@ end
 
 if(s2n==0)
     forced_SST_gradient_change_simple(nanmean(gradient_all,3),1850:2100,mean(gradient_clim(:,:,1),2),ersst5_gradient_clim,mean(gradient_clim(:,:,2),2));
-    title('Multi-Model Mean (Mixed Scenarios)')
+    title('Multi Ensemble Mean (Mixed Scenarios)')
 end
